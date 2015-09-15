@@ -20,8 +20,10 @@ func HiHandler(self *vodka.Context) error {
     return self.String(http.StatusOK, "Hi, World!")
 }
 
- v.Get("/", HiHandler)
+ v.Any("/", HiHandler)
 
 // Start server
- v.Run(":9000")
+ v.Run(9000)
+ //v.Run(":9000")
+ //v.Run("localhost")
 }
