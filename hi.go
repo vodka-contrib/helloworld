@@ -5,7 +5,6 @@ import (
 
 	"github.com/insionng/vodka"
 	"github.com/insionng/vodka/engine/fasthttp"
-	m "github.com/insionng/vodka/middleware"
 )
 
 func main() {
@@ -14,10 +13,10 @@ func main() {
 	v.Use(m.Recover())
 	v.Use(m.Gzip())
 
-	v.GET("/", HiHandler)
+	v.GET("/", HelloHandler)
 	v.Run(fasthttp.New(":1987"))
 }
 
-func HiHandler(self vodka.Context) error {
-	return self.String(http.StatusOK, "Hi, World!")
+func HelloHandler(self vodka.Context) error {
+	return self.String(http.StatusOK, "Hello, Vodka!")
 }
