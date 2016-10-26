@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	"github.com/insionng/vodka"
-	m "github.com/insionng/vodka/middleware"
 	"github.com/insionng/vodka/engine/fasthttp"
 )
 
